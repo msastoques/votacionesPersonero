@@ -11,20 +11,18 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.eugenista.votacionpersonero.ui.screens.ListaCandidatosScreen
 import com.eugenista.votacionpersonero.ui.theme.VotacionPersoneroTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint // 👈 OBLIGATORIO para que Hilt funcione aquí
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             VotacionPersoneroTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                ListaCandidatosScreen()
             }
         }
     }
